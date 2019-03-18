@@ -1,18 +1,36 @@
 //
-//  contactsTableViewController.swift
+//  ContactsTableViewController.swift
 //  BookingRestaurentApp
 //
-//  Created by Đào Kiều Anh on 3/16/19.
+//  Created by Đào Kiều Anh on 3/18/19.
 //  Copyright © 2019 apple. All rights reserved.
 //
 
 import UIKit
+import Firebase
 
-class contactsTableViewController: UITableViewController {
-    var rowcontacts:[String] = ["Information","Security","Wallet","Booking","History","Log Out!"]
+class ContactsTableViewController: UITableViewController {
+    var rowofcontacts: [String] = []
     override func viewDidLoad() {
-
         super.viewDidLoad()
+        rowofcontacts = ["Account","Security","Wallet","History","LogOut!"]
+        let calendar = Calendar.current
+        var components = DateComponents()
+        
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH"
+        let dateString = dateFormatter.string(from: currentDate)
+        print(dateString)
+        var hour:Int? = Int(dateString)
+        if(hour! >= 18 || hour! < 6)
+        {
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Moon.png")!)
+        }
+        else
+        {
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Sun.png")!)
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -22,24 +40,41 @@ class contactsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+/*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return rowofcontacts.count
     }
-
+*/
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return rowcontacts.count
+        return rowofcontacts.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! contactsTableViewCell
-//        cell.lblcontactscell.text = rowcontacts[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? UITableViewCell
+        cell?.textLabel?.text = rowofcontacts[indexPath.row]
+
         // Configure the cell...
-            cell.lblcontactstext.text = rowcontacts[indexPath.row]
-        return cell
+
+        return cell!
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.row == 4) {
+            let firebaseAuth = Auth.auth()
+            do {
+                try firebaseAuth.signOut()
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let LogOutView = storyBoard.instantiateViewController(withIdentifier: "login") as! ViewController
+                self.present(LogOutView, animated: true, completion: nil)
+            } catch let signOutError as NSError {
+                print ("Error signing out: %@", signOutError)
+            }
+        }
     }
     
 

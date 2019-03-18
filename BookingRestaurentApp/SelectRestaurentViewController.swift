@@ -1,35 +1,32 @@
 //
-//  ContactsViewController.swift
+//  SelectRestaurentViewController.swift
 //  BookingRestaurentApp
 //
-//  Created by Đào Kiều Anh on 3/11/19.
+//  Created by Đào Kiều Anh on 3/18/19.
 //  Copyright © 2019 apple. All rights reserved.
 //
 
 import UIKit
-import Firebase
+import MapKit
 
-class ContactsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet weak var didselect: UITableView!
-    var rowselect:[String] = []
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
+class SelectRestaurentViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+    var menu: [String] = []
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rowselect.count
+        return menu.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let Cell : UITableViewCell = self.didselect.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        Cell.textLabel?.text = rowselect[indexPath.row]
-        return Cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? UITableViewCell
+        cell?.textLabel?.text = menu[indexPath.row]
+        return cell!
     }
-    @IBOutlet weak var imgavatar: UIImageView!
-    // @IBOutlet weak var imgAvatar: UIImageView!
+    
+    
+
+    @IBOutlet weak var menuTableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        rowselect = ["Information","Security","Wallet","Booking","History","Log Out!"]
+        menu = ["1","2","3","4","5"]
         let calendar = Calendar.current
         var components = DateComponents()
         
@@ -47,9 +44,11 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
         {
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Sun.png")!)
         }
+        
 
         // Do any additional setup after loading the view.
     }
+    
     
 
     /*

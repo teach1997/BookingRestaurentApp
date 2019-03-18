@@ -73,6 +73,11 @@ class HomeCollectionViewController: UICollectionViewController {
     
         return cell
     }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let LogInView = storyBoard.instantiateViewController(withIdentifier: "selectedRes") as! selectedViewController
+        self.present(LogInView, animated: true, completion: nil)
+    }
 
     // MARK: UICollectionViewDelegate
 
