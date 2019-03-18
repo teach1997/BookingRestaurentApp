@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1810C78C2236479000065CB1 /* TopRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1810C78B2236479000065CB1 /* TopRateViewController.swift */; };
 		1810C78E2236479900065CB1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1810C78D2236479900065CB1 /* HomeViewController.swift */; };
 		1810C790223647AD00065CB1 /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1810C78F223647AD00065CB1 /* RecentViewController.swift */; };
 		1810C792223647B900065CB1 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1810C791223647B900065CB1 /* ContactsViewController.swift */; };
 		1810C79622364CBE00065CB1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1810C79522364CBE00065CB1 /* TabBarViewController.swift */; };
+		181FE505223B8F5B00648A0D /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181FE504223B8F5B00648A0D /* HomeCollectionViewCell.swift */; };
 		182E6C052234CFD0009828EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E6C042234CFD0009828EC /* AppDelegate.swift */; };
 		182E6C072234CFD0009828EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E6C062234CFD0009828EC /* ViewController.swift */; };
 		182E6C0A2234CFD0009828EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182E6C082234CFD0009828EC /* Main.storyboard */; };
@@ -21,6 +21,10 @@
 		182E6C252234CFD0009828EC /* BookingRestaurentAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E6C242234CFD0009828EC /* BookingRestaurentAppUITests.swift */; };
 		182E6C332234D0B0009828EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 182E6C322234D0B0009828EC /* GoogleService-Info.plist */; };
 		182E6C352234D332009828EC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E6C342234D332009828EC /* RegisterViewController.swift */; };
+		184F8B90223F741100FAC92A /* TopRateCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F8B8F223F741100FAC92A /* TopRateCollectionViewController.swift */; };
+		1858B84F223CA6C6007CFE7B /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B84E223CA6C6007CFE7B /* HomeCollectionViewController.swift */; };
+		1858B853223CAB55007CFE7B /* contactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B852223CAB55007CFE7B /* contactsTableViewController.swift */; };
+		1858B855223CAC0F007CFE7B /* contactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B854223CAC0F007CFE7B /* contactsTableViewCell.swift */; };
 		18F5AED7223791B700240804 /* ForGotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5AED6223791B700240804 /* ForGotPasswordViewController.swift */; };
 		18F5AED92237939800240804 /* FindPassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5AED82237939800240804 /* FindPassWordViewController.swift */; };
 		750BE947D9ADB5DE80C947AF /* Pods_BookingRestaurentApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA02F7860D425329420BFE1 /* Pods_BookingRestaurentApp.framework */; };
@@ -44,11 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1810C78B2236479000065CB1 /* TopRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRateViewController.swift; sourceTree = "<group>"; };
 		1810C78D2236479900065CB1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1810C78F223647AD00065CB1 /* RecentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentViewController.swift; sourceTree = "<group>"; };
 		1810C791223647B900065CB1 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		1810C79522364CBE00065CB1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		181FE504223B8F5B00648A0D /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		182E6C012234CFD0009828EC /* BookingRestaurentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookingRestaurentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		182E6C042234CFD0009828EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		182E6C062234CFD0009828EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +68,10 @@
 		182E6C262234CFD0009828EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		182E6C322234D0B0009828EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		182E6C342234D332009828EC /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		184F8B8F223F741100FAC92A /* TopRateCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRateCollectionViewController.swift; sourceTree = "<group>"; };
+		1858B84E223CA6C6007CFE7B /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
+		1858B852223CAB55007CFE7B /* contactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactsTableViewController.swift; sourceTree = "<group>"; };
+		1858B854223CAC0F007CFE7B /* contactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactsTableViewCell.swift; sourceTree = "<group>"; };
 		18F5AED6223791B700240804 /* ForGotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForGotPasswordViewController.swift; sourceTree = "<group>"; };
 		18F5AED82237939800240804 /* FindPassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPassWordViewController.swift; sourceTree = "<group>"; };
 		2D311C0057B54C7979F30868 /* Pods-BookingRestaurentApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookingRestaurentApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookingRestaurentApp/Pods-BookingRestaurentApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +130,7 @@
 		182E6C032234CFD0009828EC /* BookingRestaurentApp */ = {
 			isa = PBXGroup;
 			children = (
+				1858B84E223CA6C6007CFE7B /* HomeCollectionViewController.swift */,
 				182E6C322234D0B0009828EC /* GoogleService-Info.plist */,
 				182E6C042234CFD0009828EC /* AppDelegate.swift */,
 				182E6C062234CFD0009828EC /* ViewController.swift */,
@@ -130,13 +139,16 @@
 				182E6C0D2234CFD0009828EC /* LaunchScreen.storyboard */,
 				182E6C102234CFD0009828EC /* Info.plist */,
 				182E6C342234D332009828EC /* RegisterViewController.swift */,
-				1810C78B2236479000065CB1 /* TopRateViewController.swift */,
 				1810C78D2236479900065CB1 /* HomeViewController.swift */,
 				1810C78F223647AD00065CB1 /* RecentViewController.swift */,
 				1810C791223647B900065CB1 /* ContactsViewController.swift */,
 				1810C79522364CBE00065CB1 /* TabBarViewController.swift */,
 				18F5AED6223791B700240804 /* ForGotPasswordViewController.swift */,
 				18F5AED82237939800240804 /* FindPassWordViewController.swift */,
+				181FE504223B8F5B00648A0D /* HomeCollectionViewCell.swift */,
+				1858B852223CAB55007CFE7B /* contactsTableViewController.swift */,
+				1858B854223CAC0F007CFE7B /* contactsTableViewCell.swift */,
+				184F8B8F223F741100FAC92A /* TopRateCollectionViewController.swift */,
 			);
 			path = BookingRestaurentApp;
 			sourceTree = "<group>";
@@ -317,6 +329,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-BookingRestaurentApp/Pods-BookingRestaurentApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -325,6 +338,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,15 +375,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1858B853223CAB55007CFE7B /* contactsTableViewController.swift in Sources */,
 				1810C79622364CBE00065CB1 /* TabBarViewController.swift in Sources */,
+				184F8B90223F741100FAC92A /* TopRateCollectionViewController.swift in Sources */,
 				18F5AED7223791B700240804 /* ForGotPasswordViewController.swift in Sources */,
 				1810C78E2236479900065CB1 /* HomeViewController.swift in Sources */,
 				1810C792223647B900065CB1 /* ContactsViewController.swift in Sources */,
-				1810C78C2236479000065CB1 /* TopRateViewController.swift in Sources */,
 				182E6C352234D332009828EC /* RegisterViewController.swift in Sources */,
+				181FE505223B8F5B00648A0D /* HomeCollectionViewCell.swift in Sources */,
 				1810C790223647AD00065CB1 /* RecentViewController.swift in Sources */,
 				182E6C072234CFD0009828EC /* ViewController.swift in Sources */,
+				1858B84F223CA6C6007CFE7B /* HomeCollectionViewController.swift in Sources */,
 				18F5AED92237939800240804 /* FindPassWordViewController.swift in Sources */,
+				1858B855223CAC0F007CFE7B /* contactsTableViewCell.swift in Sources */,
 				182E6C052234CFD0009828EC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

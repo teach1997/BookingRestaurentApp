@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class HomeViewController: UIViewController {
-
+    var test:[String] = []
     @IBOutlet weak var btnbacktabbar: UIButton!
     @IBOutlet weak var btnlogout: UIButton!
     @IBAction func btnLogOut(_ sender: Any) {
@@ -24,8 +24,19 @@ class HomeViewController: UIViewController {
             print ("Error signing out: %@", signOutError)
         }
     }
+    /*
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        return cell
+    }
+ */
     override func viewDidLoad() {
         super.viewDidLoad()
+        test = ["1","2","3","4"]
         let calendar = Calendar.current
         var components = DateComponents()
         
