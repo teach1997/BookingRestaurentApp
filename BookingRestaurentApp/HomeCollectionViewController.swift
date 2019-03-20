@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 private let reuseIdentifier = "Cell"
 
 class HomeCollectionViewController: UICollectionViewController {
-
+    var resref: DatabaseReference!
+    var reslist = [inforestaurent]()
     override func viewDidLoad() {
         super.viewDidLoad()
         let calendar = Calendar.current
@@ -38,6 +40,26 @@ class HomeCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        resref.database.reference().child("Restaurent");
+        //resref.Database.database().reference().child("Restaurent")
+        resref.observe(DataEventType.value) { (snapshot) in
+            if(snapshot.childrenCount > 0){
+                self.reslist.removeAll()
+                for Restaurent in snapshot.children.allObjects as! [DataSnapshot]!{
+                    let resobj = Restaurent.value as! [String:AnyObject]
+                    let ResName = resobj["ResName"]
+                    let ResMap = resobj["ResMap"]
+                    let Rate = resobj["Rate"]
+                    
+                    let res = inforestaurent(resname: ResName as! String?, resmap: ResMap as! String?, rate: Rate as! String?)
+                    self.reslist.append(res)
+                    self.reloadInputViews()
+                    
+                }
+                
+            }
+        }
+        
 
         // Do any additional setup after loading the view.
     }
@@ -56,13 +78,13 @@ class HomeCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 4
+        return 0
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-            return 4
+            return reslist.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
