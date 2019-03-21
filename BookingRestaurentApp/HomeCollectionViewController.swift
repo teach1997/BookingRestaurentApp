@@ -12,6 +12,7 @@ import Firebase
 private let reuseIdentifier = "Cell"
 
 class HomeCollectionViewController: UICollectionViewController {
+//    var resref: DatabaseReference!
     var resref: DatabaseReference!
     var reslist = [inforestaurent]()
     override func viewDidLoad() {
@@ -40,7 +41,11 @@ class HomeCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        resref.database.reference().child("Restaurent");
+        
+        
+        resref = Database.database().reference().child("Restaurent")
+          //  resref.Datase
+//        resref.database.reference().child("Restaurent")
         //resref.Database.database().reference().child("Restaurent")
         resref.observe(DataEventType.value) { (snapshot) in
             if(snapshot.childrenCount > 0){
@@ -59,6 +64,8 @@ class HomeCollectionViewController: UICollectionViewController {
                 
             }
         }
+        print("reslist.count=")
+        print(reslist.count)
         
 
         // Do any additional setup after loading the view.
@@ -78,7 +85,7 @@ class HomeCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 

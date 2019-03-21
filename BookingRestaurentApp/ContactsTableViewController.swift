@@ -75,7 +75,18 @@ class ContactsTableViewController: UITableViewController {
                 print ("Error signing out: %@", signOutError)
             }
         }
+        if (indexPath.row == 0){
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let LogOutView = storyBoard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
+            self.present(LogOutView, animated: true, completion: nil)
+        }
+        if (indexPath.row == 1) {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let backsite = storyBoard.instantiateViewController(withIdentifier: "changepass") as! changePassViewController
+            self.present(backsite, animated: true, completion: nil)
+        }
     }
+    
     
 
     /*
