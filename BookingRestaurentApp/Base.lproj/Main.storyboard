@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VKH-LH-s5u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Il1-oo-M8X">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -519,8 +519,12 @@
                                     <action selector="btnsave:" destination="p5s-7t-G0H" eventType="touchUpInside" id="3s1-ce-1Mq"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="avatar-doc-dao-cho-zalo-2" translatesAutoresizingMaskIntoConstraints="NO" id="X7g-fW-fuA">
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="avatar-doc-dao-cho-zalo-2" translatesAutoresizingMaskIntoConstraints="NO" id="X7g-fW-fuA">
                                 <rect key="frame" x="67" y="240" width="241" height="124"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="eVT-7e-pG1" appends="YES" id="ujY-kS-KTO"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -548,8 +552,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4YE-9j-vjn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="eVT-7e-pG1">
+                    <connections>
+                        <action selector="tapgesteravatar:" destination="p5s-7t-G0H" id="eds-Ef-Xyy"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4109.6000000000004" y="-799.2503748125938"/>
+            <point key="canvasLocation" x="513" y="-887"/>
         </scene>
         <!--Home-->
         <scene sceneID="pY9-Lz-dMX">
@@ -842,7 +851,7 @@
         <image name="avatar-doc-dao-cho-zalo-2" width="245.75999450683594" height="257.27999877929688"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="c8B-Mg-VB7"/>
-        <segue reference="sIY-8C-chJ"/>
+        <segue reference="hnp-Mz-JEB"/>
+        <segue reference="t5d-lf-lws"/>
     </inferredMetricsTieBreakers>
 </document>

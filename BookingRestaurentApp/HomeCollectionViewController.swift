@@ -13,13 +13,37 @@ private let reuseIdentifier = "Cell"
 
 class HomeCollectionViewController: UICollectionViewController {
 //    var resref: DatabaseReference!
-    var resref: DatabaseReference!
-    var reslist = [inforestaurent]()
+    var arrResName: Array<String> = Array<String>()
+    var arrResMap: Array<String> = Array<String>()
+    var ArrRate: Array<String> = Array<String>()
+    //var resref: DatabaseReference!
+    var restaurent = [resmodel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let resref = Database.database().reference().child("ResInformation")
+        resref.observe(.value, with: {(snapshot) in
+            self.restaurent.removeAll()
+            if let firebaseDic = snapshot.value as? [String: AnyObject]
+            {
+                for p in firebaseDic{
+                    let res: String = p.1 as! String
+                    self.arrResName.append(res["ResName"])
+                    self.ArrRate.append(res["Menu"])
+                }
+                //                let childsnapshot = child as! DataSnapshot
+//                let resin = resmodel(snapshot: childsnapshot)
+//                print(resin)
+//                self.restaurent.insert(resin, at: 0)
+            }
+        })
+    
+                
+
+        print("dasdsagsdgasdgdasg")
+        print(arrResName.count)
         let calendar = Calendar.current
         var components = DateComponents()
-        
         let currentDate = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH"
@@ -34,55 +58,7 @@ class HomeCollectionViewController: UICollectionViewController {
         {
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Sun.png")!)
         }
-
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
-        
-        resref = Database.database().reference().child("Restaurent")
-          //  resref.Datase
-//        resref.database.reference().child("Restaurent")
-        //resref.Database.database().reference().child("Restaurent")
-        resref.observe(DataEventType.value) { (snapshot) in
-            if(snapshot.childrenCount > 0){
-                self.reslist.removeAll()
-                for Restaurent in snapshot.children.allObjects as! [DataSnapshot]!{
-                    let resobj = Restaurent.value as! [String:AnyObject]
-                    let ResName = resobj["ResName"]
-                    let ResMap = resobj["ResMap"]
-                    let Rate = resobj["Rate"]
-                    
-                    let res = inforestaurent(resname: ResName as! String?, resmap: ResMap as! String?, rate: Rate as! String?)
-                    self.reslist.append(res)
-                    self.reloadInputViews()
-                    
-                }
-                
-            }
-        }
-        print("reslist.count=")
-        print(reslist.count)
-        
-
-        // Do any additional setup after loading the view.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
-
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -91,7 +67,7 @@ class HomeCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-            return reslist.count
+            return arrResName.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

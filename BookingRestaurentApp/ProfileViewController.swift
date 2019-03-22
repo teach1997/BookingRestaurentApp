@@ -9,12 +9,33 @@
 import UIKit
 import Firebase
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var lblemail: UILabel!
     @IBOutlet weak var txtname: UITextField!
     @IBOutlet weak var txtphone: UITextField!
     @IBOutlet weak var imgavatar: UIImageView!
+    @IBAction func tapgesteravatar(_ sender: Any) {
+        let img = UIImagePickerController()
+        img.sourceType = UIImagePickerController.SourceType.photoLibrary
+        img.delegate = self
+        img.allowsEditing = true
+        present(img, animated: true, completion: nil )
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        var selectedImage: UIImage?
+        if let editedImage = info[.editedImage] as? UIImage {
+            selectedImage = editedImage
+            self.imgavatar.image = selectedImage!
+            picker.dismiss(animated: true, completion: nil)
+        } else if let originalImage = info[.originalImage] as? UIImage {
+            selectedImage = originalImage
+            self.imgavatar.image = selectedImage!
+            picker.dismiss(animated: true, completion: nil)
+        }
+        
+    }
     @IBAction func btnsave(_ sender: Any) {
         let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
         changeRequest?.displayName = txtname.text

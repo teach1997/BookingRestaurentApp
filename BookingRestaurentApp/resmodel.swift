@@ -1,17 +1,38 @@
-//
-//  resmodel.swift
-//  BookingRestaurentApp
-//
-//  Created by Đào Kiều Anh on 3/20/19.
-//  Copyright © 2019 apple. All rights reserved.
-//
-class inforestaurent {
-    var resname: String?
-    var resmap: String?
-    var rate: String?
-    init(resname:String?, resmap:String?, rate:String? ) {
-        self.resname = resname;
-        self.resmap = resmap;
-        self.rate = rate;
+import Foundation
+import Firebase
+
+class resmodel
+{
+    var ResName: String = ""
+    var ResMap: String = ""
+    var Rate: String = ""
+    let ref: DatabaseReference!
+    
+//    init(text: String) {
+//        self.text = text
+//        ref = Database.database().reference().child("ResInformation").childByAutoId()
+//    }
+    
+    init(snapshot: DataSnapshot)
+    {
+        ref = snapshot.ref
+        if let value = snapshot.value as? [String : Any] {
+            ResName = value["ResName"] as! String
+            ResMap = value["ResMapx-y"] as! String
+            Rate = value["Menu"] as! String
+        }
     }
+
+    /*
+    func toDictionary() - [String : Any]
+{
+    return [
+    "text" : text,
+    "numberOfLikes" : numberOfLikes,
+    "numberOfAngry" : numberOfAngry
+    ]
+    }
+}
+)
+ */
 }
