@@ -30,6 +30,7 @@
 		184F8BAA2243778800FAC92A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F8BA92243778800FAC92A /* ProfileViewController.swift */; };
 		184F8BAC2243847900FAC92A /* changePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F8BAB2243847900FAC92A /* changePassViewController.swift */; };
 		1858B84F223CA6C6007CFE7B /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B84E223CA6C6007CFE7B /* HomeCollectionViewController.swift */; };
+		18F39E272244CA3800AAFE51 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F39E262244CA3800AAFE51 /* WalletViewController.swift */; };
 		18F5AED7223791B700240804 /* ForGotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5AED6223791B700240804 /* ForGotPasswordViewController.swift */; };
 		18F5AED92237939800240804 /* FindPassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5AED82237939800240804 /* FindPassWordViewController.swift */; };
 		750BE947D9ADB5DE80C947AF /* Pods_BookingRestaurentApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA02F7860D425329420BFE1 /* Pods_BookingRestaurentApp.framework */; };
@@ -82,6 +83,7 @@
 		184F8BA92243778800FAC92A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		184F8BAB2243847900FAC92A /* changePassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changePassViewController.swift; sourceTree = "<group>"; };
 		1858B84E223CA6C6007CFE7B /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
+		18F39E262244CA3800AAFE51 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		18F5AED6223791B700240804 /* ForGotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForGotPasswordViewController.swift; sourceTree = "<group>"; };
 		18F5AED82237939800240804 /* FindPassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPassWordViewController.swift; sourceTree = "<group>"; };
 		2D311C0057B54C7979F30868 /* Pods-BookingRestaurentApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookingRestaurentApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookingRestaurentApp/Pods-BookingRestaurentApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				184F8BA72243660600FAC92A /* InfoViewController.swift */,
 				184F8BA92243778800FAC92A /* ProfileViewController.swift */,
 				184F8BAB2243847900FAC92A /* changePassViewController.swift */,
+				18F39E262244CA3800AAFE51 /* WalletViewController.swift */,
 			);
 			path = BookingRestaurentApp;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				184F8BAA2243778800FAC92A /* ProfileViewController.swift in Sources */,
 				184F8B92223F821A00FAC92A /* ContactsTableViewController.swift in Sources */,
 				18F5AED7223791B700240804 /* ForGotPasswordViewController.swift in Sources */,
+				18F39E272244CA3800AAFE51 /* WalletViewController.swift in Sources */,
 				184F8BA82243660600FAC92A /* InfoViewController.swift in Sources */,
 				1810C78E2236479900065CB1 /* HomeViewController.swift in Sources */,
 				182E6C352234D332009828EC /* RegisterViewController.swift in Sources */,

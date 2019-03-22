@@ -85,6 +85,12 @@ class ContactsTableViewController: UITableViewController {
             let backsite = storyBoard.instantiateViewController(withIdentifier: "changepass") as! changePassViewController
             self.present(backsite, animated: true, completion: nil)
         }
+        if(indexPath.row == 2){
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let walletsite = storyBoard.instantiateViewController(withIdentifier: "wallet") as! WalletViewController
+            self.present(walletsite, animated: true , completion: nil)
+            
+        }
     }
     
     

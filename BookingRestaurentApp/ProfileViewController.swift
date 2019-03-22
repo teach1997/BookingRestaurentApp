@@ -29,6 +29,23 @@ class ProfileViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let calendar = Calendar.current
+        var components = DateComponents()
+        
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH"
+        let dateString = dateFormatter.string(from: currentDate)
+        print(dateString)
+        var hour:Int? = Int(dateString)
+        if(hour! >= 18 || hour! < 6)
+        {
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Moon.png")!)
+        }
+        else
+        {
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Sun.png")!)
+        }
         let user = Auth.auth().currentUser
         if let user = user {
             let uid = user.uid
