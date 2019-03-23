@@ -12,36 +12,66 @@ import Firebase
 private let reuseIdentifier = "Cell"
 
 class HomeCollectionViewController: UICollectionViewController {
-//    var resref: DatabaseReference!
+//    var resref: DatabaseReference!\
+ 
+    
+    
     var arrResName: Array<String> = Array<String>()
     var arrResMap: Array<String> = Array<String>()
     var ArrRate: Array<String> = Array<String>()
+    
+    
+    var reslist = [resmodel]()
+    
     //var resref: DatabaseReference!
     var restaurent = [resmodel]()
-    
+    var refres:DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /*
+        
         let resref = Database.database().reference().child("ResInformation")
         resref.observe(.value, with: {(snapshot) in
             self.restaurent.removeAll()
-            if let firebaseDic = snapshot.value as? [String: AnyObject]
-            {
-                for p in firebaseDic{
-                    let res: String = p.1 as! String
-                    self.arrResName.append(res["ResName"])
-                    self.ArrRate.append(res["Menu"])
-                }
-                //                let childsnapshot = child as! DataSnapshot
-//                let resin = resmodel(snapshot: childsnapshot)
-//                print(resin)
-//                self.restaurent.insert(resin, at: 0)
-            }
-        })
-    
+            
+            for child in snapshot.children{
+                let childsnapshot = child as! DataSnapshot
+                let resin = resmodel(snapshot: childsnapshot)
+                print(resin)
+                self.restaurent.insert(resin, at: 0)
                 
-
-        print("dasdsagsdgasdgdasg")
-        print(arrResName.count)
+                
+            }
+            
+            print(self.restaurent.count)
+            self.collectionView!.reloadData()
+     //       print(snapshot)
+        })
+        
+        
+        
+    */
+    
+    
+        refres = Database.database().reference().child("ResInformation");
+        refres.observe(DataEventType.value, with: {(snapshot) in
+            if snapshot.childrenCount > 0{
+                self.reslist.removeAll()
+                
+                for res in snapshot.children.allObjects as![DataSnapshot]{
+                    let resobj = res.value as? [String: AnyObject]
+                    let resname = resobj?["ResName"]
+                    let resmap = resobj?["ResMapx-y"]
+                    let rate = resobj?["Menu"]
+                    let resi = resmodel(ResName: resname as! String?, ResMap: resmap as! String?, Rate: rate as! String?)
+                    self.reslist.append(resi)
+                }
+                self.collectionView!.reloadData()
+            }
+            
+        })
+        
         let calendar = Calendar.current
         var components = DateComponents()
         let currentDate = Date()
@@ -67,12 +97,16 @@ class HomeCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-            return arrResName.count
+            return self.reslist.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeCollectionViewCell
-        cell.lbltestcell.text = "1"
+        let res: resmodel
+        res = reslist[indexPath.row]
+        cell.lblrate.text = res.Rate
+        cell.title.topItem?.title = res.ResName
+        
     
         // Configure the cell
     

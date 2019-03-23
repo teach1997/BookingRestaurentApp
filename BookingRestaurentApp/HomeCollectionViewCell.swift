@@ -10,6 +10,9 @@ import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
    // @IBOutlet weak var lblcell: UILabel!
-    @IBOutlet weak var lbltestcell: UILabel!
+    //@IBOutlet weak var lbltestcell: UILabel!
+    @IBOutlet weak var lblrate: UILabel!
+    @IBOutlet weak var title: UINavigationBar!
+    @IBOutlet weak var imgrestaurent: UIImageView!
     
 }

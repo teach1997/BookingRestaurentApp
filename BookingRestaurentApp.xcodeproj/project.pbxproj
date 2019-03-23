@@ -143,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				1858B84E223CA6C6007CFE7B /* HomeCollectionViewController.swift */,
+				181FE504223B8F5B00648A0D /* HomeCollectionViewCell.swift */,
 				184F8B96223F882D00FAC92A /* MenuTableViewController.swift */,
 				182E6C322234D0B0009828EC /* GoogleService-Info.plist */,
 				182E6C042234CFD0009828EC /* AppDelegate.swift */,
@@ -157,7 +158,6 @@
 				1810C79522364CBE00065CB1 /* TabBarViewController.swift */,
 				18F5AED6223791B700240804 /* ForGotPasswordViewController.swift */,
 				18F5AED82237939800240804 /* FindPassWordViewController.swift */,
-				181FE504223B8F5B00648A0D /* HomeCollectionViewCell.swift */,
 				184F8B8F223F741100FAC92A /* TopRateCollectionViewController.swift */,
 				184F8B91223F821A00FAC92A /* ContactsTableViewController.swift */,
 				184F8B99223F888400FAC92A /* SelectRestaurentViewController.swift */,
