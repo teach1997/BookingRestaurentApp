@@ -56,7 +56,7 @@ class TopRateCollectionViewController: UICollectionViewController {
     }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let LogInView = storyBoard.instantiateViewController(withIdentifier: "selectedRes") as! selectedViewController
+        let LogInView = storyBoard.instantiateViewController(withIdentifier: "selectres") as! SelectRestaurentViewController
         self.present(LogInView, animated: true, completion: nil)
     }
     //override func secti

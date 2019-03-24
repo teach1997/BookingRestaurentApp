@@ -24,13 +24,13 @@
 		184F8B92223F821A00FAC92A /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F8B91223F821A00FAC92A /* ContactsTableViewController.swift */; };
 		184F8B97223F882D00FAC92A /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F8B96223F882D00FAC92A /* MenuTableViewController.swift */; };
 		184F8B9A223F888400FAC92A /* SelectRestaurentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F8B99223F888400FAC92A /* SelectRestaurentViewController.swift */; };
-		184F8B9C223F8C1800FAC92A /* selectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F8B9B223F8C1800FAC92A /* selectedViewController.swift */; };
 		184F8BA62242310600FAC92A /* resmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F8BA52242310600FAC92A /* resmodel.swift */; };
 		184F8BA82243660600FAC92A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F8BA72243660600FAC92A /* InfoViewController.swift */; };
 		184F8BAA2243778800FAC92A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F8BA92243778800FAC92A /* ProfileViewController.swift */; };
 		184F8BAC2243847900FAC92A /* changePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F8BAB2243847900FAC92A /* changePassViewController.swift */; };
 		1858B84F223CA6C6007CFE7B /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B84E223CA6C6007CFE7B /* HomeCollectionViewController.swift */; };
 		18F39E272244CA3800AAFE51 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F39E262244CA3800AAFE51 /* WalletViewController.swift */; };
+		18F39E2922473F6700AAFE51 /* resmenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F39E2822473F6700AAFE51 /* resmenu.swift */; };
 		18F5AED7223791B700240804 /* ForGotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5AED6223791B700240804 /* ForGotPasswordViewController.swift */; };
 		18F5AED92237939800240804 /* FindPassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5AED82237939800240804 /* FindPassWordViewController.swift */; };
 		750BE947D9ADB5DE80C947AF /* Pods_BookingRestaurentApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA02F7860D425329420BFE1 /* Pods_BookingRestaurentApp.framework */; };
@@ -77,13 +77,13 @@
 		184F8B91223F821A00FAC92A /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		184F8B96223F882D00FAC92A /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		184F8B99223F888400FAC92A /* SelectRestaurentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRestaurentViewController.swift; sourceTree = "<group>"; };
-		184F8B9B223F8C1800FAC92A /* selectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectedViewController.swift; sourceTree = "<group>"; };
 		184F8BA52242310600FAC92A /* resmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resmodel.swift; sourceTree = "<group>"; };
 		184F8BA72243660600FAC92A /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		184F8BA92243778800FAC92A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		184F8BAB2243847900FAC92A /* changePassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changePassViewController.swift; sourceTree = "<group>"; };
 		1858B84E223CA6C6007CFE7B /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		18F39E262244CA3800AAFE51 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		18F39E2822473F6700AAFE51 /* resmenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resmenu.swift; sourceTree = "<group>"; };
 		18F5AED6223791B700240804 /* ForGotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForGotPasswordViewController.swift; sourceTree = "<group>"; };
 		18F5AED82237939800240804 /* FindPassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPassWordViewController.swift; sourceTree = "<group>"; };
 		2D311C0057B54C7979F30868 /* Pods-BookingRestaurentApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookingRestaurentApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookingRestaurentApp/Pods-BookingRestaurentApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,12 +161,12 @@
 				184F8B8F223F741100FAC92A /* TopRateCollectionViewController.swift */,
 				184F8B91223F821A00FAC92A /* ContactsTableViewController.swift */,
 				184F8B99223F888400FAC92A /* SelectRestaurentViewController.swift */,
-				184F8B9B223F8C1800FAC92A /* selectedViewController.swift */,
 				184F8BA52242310600FAC92A /* resmodel.swift */,
 				184F8BA72243660600FAC92A /* InfoViewController.swift */,
 				184F8BA92243778800FAC92A /* ProfileViewController.swift */,
 				184F8BAB2243847900FAC92A /* changePassViewController.swift */,
 				18F39E262244CA3800AAFE51 /* WalletViewController.swift */,
+				18F39E2822473F6700AAFE51 /* resmenu.swift */,
 			);
 			path = BookingRestaurentApp;
 			sourceTree = "<group>";
@@ -398,7 +398,6 @@
 				184F8B97223F882D00FAC92A /* MenuTableViewController.swift in Sources */,
 				184F8B9A223F888400FAC92A /* SelectRestaurentViewController.swift in Sources */,
 				184F8BA62242310600FAC92A /* resmodel.swift in Sources */,
-				184F8B9C223F8C1800FAC92A /* selectedViewController.swift in Sources */,
 				184F8BAA2243778800FAC92A /* ProfileViewController.swift in Sources */,
 				184F8B92223F821A00FAC92A /* ContactsTableViewController.swift in Sources */,
 				18F5AED7223791B700240804 /* ForGotPasswordViewController.swift in Sources */,
@@ -409,6 +408,7 @@
 				181FE505223B8F5B00648A0D /* HomeCollectionViewCell.swift in Sources */,
 				1810C790223647AD00065CB1 /* RecentViewController.swift in Sources */,
 				182E6C072234CFD0009828EC /* ViewController.swift in Sources */,
+				18F39E2922473F6700AAFE51 /* resmenu.swift in Sources */,
 				1858B84F223CA6C6007CFE7B /* HomeCollectionViewController.swift in Sources */,
 				18F5AED92237939800240804 /* FindPassWordViewController.swift in Sources */,
 				184F8BAC2243847900FAC92A /* changePassViewController.swift in Sources */,

@@ -313,25 +313,29 @@
         <!--Select Restaurent View Controller-->
         <scene sceneID="eua-XS-0BB">
             <objects>
-                <viewController id="hC9-EW-4AN" customClass="SelectRestaurentViewController" customModule="BookingRestaurentApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="selectres" id="hC9-EW-4AN" customClass="SelectRestaurentViewController" customModule="BookingRestaurentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kVp-Mx-FEj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Cdn-lP-klx">
                                 <rect key="frame" x="41" y="100" width="293" height="189"/>
+                                <connections>
+                                    <outlet property="delegate" destination="hC9-EW-4AN" id="rH2-YO-x5g"/>
+                                </connections>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Restaurent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dL9-aH-pnc">
-                                <rect key="frame" x="41" y="297" width="293" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="41" y="297" width="293" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="0.90064362050000002" green="0.16780691859999999" blue="0.1580680964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fkD-tb-Z98">
-                                <rect key="frame" x="67" y="359" width="241" height="205"/>
+                                <rect key="frame" x="67" y="359" width="241" height="202"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexColor" red="0.20200860339999999" green="0.25415040220000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -356,7 +360,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hH-sV-SAZ">
-                                <rect key="frame" x="41" y="584" width="293" height="41"/>
+                                <rect key="frame" x="41" y="581" width="293" height="41"/>
                                 <color key="backgroundColor" red="0.39928112780000002" green="0.85730496840000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Booking">
@@ -364,8 +368,8 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2T-j1-nhY">
-                                <rect key="frame" x="166" y="633" width="43" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="166" y="630" width="43" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -397,12 +401,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="7Bd-d0-60y"/>
                     <connections>
+                        <outlet property="lblrate" destination="K2T-j1-nhY" id="9Lk-Wf-18T"/>
+                        <outlet property="lblresname" destination="dL9-aH-pnc" id="4dq-A8-Zhs"/>
                         <outlet property="menuTableview" destination="fkD-tb-Z98" id="bc9-0e-fVz"/>
+                        <outlet property="res" destination="Cdn-lP-klx" id="10r-EI-Pbm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="anf-qR-Hjd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3005.5999999999999" y="-654.42278860569718"/>
+            <point key="canvasLocation" x="2681" y="-654"/>
         </scene>
         <!--Wallet View Controller-->
         <scene sceneID="dl2-Xu-grE">
@@ -558,7 +565,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="513" y="-887"/>
+            <point key="canvasLocation" x="252" y="-1078"/>
         </scene>
         <!--Home-->
         <scene sceneID="pY9-Lz-dMX">

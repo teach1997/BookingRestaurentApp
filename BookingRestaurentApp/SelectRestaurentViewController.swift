@@ -8,12 +8,33 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 class SelectRestaurentViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-    var menu: [String] = []
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menu.count
+    
+    @IBOutlet weak var res: MKMapView!
+    @IBOutlet weak var lblrate: UILabel!
+    @IBOutlet weak var lblresname: UILabel!
+    final class resAnnotation: NSObject, MKAnnotation{
+        var coordinate: CLLocationCoordinate2D
+        var title: String?
+        var subtitle: String?
+        init(coordinate: CLLocationCoordinate2D, title: String?, subtitle: String? ){
+            self.coordinate = coordinate
+            self.title = title
+            self.subtitle = subtitle
+            super.init()
+        }
+        
+        
     }
+    var getname = String()
+    var getrate = String()
+    var getid = String()
+    var getmap = String()
+    var menu = [String]()
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return menu.count    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? UITableViewCell
@@ -24,9 +45,37 @@ class SelectRestaurentViewController: UIViewController,UITableViewDelegate, UITa
     
 
     @IBOutlet weak var menuTableview: UITableView!
+    
+    var resm: [String] = [""]
     override func viewDidLoad() {
         super.viewDidLoad()
-        menu = ["1","2","3","4","5"]
+        /*
+        let maparr = getmap.components(separatedBy: "-")
+        let mapx = maparr[0]
+        let mapy = maparr[1]
+        res.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        let rescoordinate =  CLLocationCoordinate2D(latitude: Double(mapx)!, longitude: Double(mapy)!)
+        let resannotaion = resAnnotation(coordinate: rescoordinate, title: getname, subtitle: getname + getrate)
+        res.addAnnotation(resannotaion)
+ */
+       /*
+        let ref = Database.database().reference().child(getid)
+        ref.observe(DataEventType.value, with: {(snapshot) in
+            if snapshot.childrenCount > 0{
+                self.resm.removeAll()
+            }
+            for res in snapshot.children.allObjects as! [DataSnapshot]{
+                let resobj = res.value as? [String: AnyObject]
+                let mon1 = resobj?["Mon1"]
+                let mon2 = resobj?["Mon2"]
+                let mon3 = resobj?["Mon3"]
+                self.resm = [mon1,mon2,mon3] as! [String]
+            }
+            
+        })
+        */
+        lblrate.text = getrate
+        lblresname.text = getname
         let calendar = Calendar.current
         var components = DateComponents()
         

@@ -12,49 +12,20 @@ import Firebase
 private let reuseIdentifier = "Cell"
 
 class HomeCollectionViewController: UICollectionViewController {
-//    var resref: DatabaseReference!\
- 
-    
-    
-    var arrResName: Array<String> = Array<String>()
-    var arrResMap: Array<String> = Array<String>()
-    var ArrRate: Array<String> = Array<String>()
-    
-    
     var reslist = [resmodel]()
+    //var restaurent = [resmodel]()
+    var menures = [resmenu]()
+    var hinhref: Array<UIImage> = Array<UIImage>()
     
-    //var resref: DatabaseReference!
-    var restaurent = [resmodel]()
-    var refres:DatabaseReference!
+    //var refres:DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*
         
-        let resref = Database.database().reference().child("ResInformation")
-        resref.observe(.value, with: {(snapshot) in
-            self.restaurent.removeAll()
-            
-            for child in snapshot.children{
-                let childsnapshot = child as! DataSnapshot
-                let resin = resmodel(snapshot: childsnapshot)
-                print(resin)
-                self.restaurent.insert(resin, at: 0)
-                
-                
-            }
-            
-            print(self.restaurent.count)
-            self.collectionView!.reloadData()
-     //       print(snapshot)
-        })
+        var storage = Storage.storage().reference(forURL: "gs://bookingrestaurentapp.appspot.com/")
+        let refres = Database.database().reference().child("ResInformation");
         
-        
-        
-    */
-    
-    
-        refres = Database.database().reference().child("ResInformation");
         refres.observe(DataEventType.value, with: {(snapshot) in
             if snapshot.childrenCount > 0{
                 self.reslist.removeAll()
@@ -64,8 +35,33 @@ class HomeCollectionViewController: UICollectionViewController {
                     let resname = resobj?["ResName"]
                     let resmap = resobj?["ResMapx-y"]
                     let rate = resobj?["Menu"]
-                    let resi = resmodel(ResName: resname as! String?, ResMap: resmap as! String?, Rate: rate as! String?)
+                    let id = resobj?["id"]
+                    let mon1 = resobj?["Mon1"]
+                    let mon2 = resobj?["Mon2"]
+                    let mon3 = resobj?["Mon3"]
+                    let tenhinh: String = id as! String + ".jpg"
+                    let hinh: String = "https://firebasestorage.googleapis.com/v0/b/bookingrestaurentapp.appspot.com/o/\(tenhinh)?alt=media&token=27e832ea-365f-45e2-b574-6404780b9503"
+                    
+                    
+                    /*
+                    let islandRef = storage.child("images/\(tenhinh)")
+                    islandRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                        if(error != nil) {
+                            print("error download image")
+                            print(tenhinh)
+                            print("images/\(tenhinh)")
+                        } else {
+                            let image = UIImage(data: data!)
+                            self.hinhref.append(image!)
+                        }
+                    }
+                    */
+                    //let id = resobj?["id"]
+                    let resmenuref = resmenu(mon1: mon1 as! String, mon2: mon2 as! String, mon3: mon3 as! String)
+                    let resi = resmodel(ResName: resname as! String?, ResMap: resmap as! String?, Rate: rate as! String?, id: id as! String?, hinh: hinh as! String?)
+                    self.menures.append(resmenuref)
                     self.reslist.append(resi)
+                    //self.arrid.append(id as! String)
                 }
                 self.collectionView!.reloadData()
             }
@@ -99,13 +95,18 @@ class HomeCollectionViewController: UICollectionViewController {
         // #warning Incomplete implementation, return the number of items
             return self.reslist.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeCollectionViewCell
+
         let res: resmodel
         res = reslist[indexPath.row]
+        let url = URL(string: res.hinh!)
+        let data = try? Data(contentsOf: url!)
         cell.lblrate.text = res.Rate
         cell.title.topItem?.title = res.ResName
+        cell.imgrestaurent.image = UIImage(data: data!)
+        
         
     
         // Configure the cell
@@ -114,7 +115,15 @@ class HomeCollectionViewController: UICollectionViewController {
     }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let LogInView = storyBoard.instantiateViewController(withIdentifier: "selectedRes") as! selectedViewController
+        let LogInView = storyBoard.instantiateViewController(withIdentifier: "selectres") as! SelectRestaurentViewController
+        let res: resmodel
+        let menu: resmenu
+        menu = menures[indexPath.row]
+        res = reslist[indexPath.row]
+        LogInView.getname = res.ResName!
+        LogInView.getrate = res.Rate!
+        LogInView.menu = [menu.mon1, menu.mon2, menu.mon3] as! [String]
+        
         self.present(LogInView, animated: true, completion: nil)
     }
 

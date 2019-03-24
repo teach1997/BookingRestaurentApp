@@ -19,18 +19,14 @@ class InfoViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        refinfo = Database.database().reference().child("ResInformation");
+        refinfo = Database.database().reference().child("-La_FqLWnpaiiZApnKVZ");
         
         // Do any additional setup after loading the view.
     }
     func addUserinfo() {
         let key = refinfo.childByAutoId().key
-        let user = ["id" : key, "ResName" : txtfullname.text! as String, "ResMapx-y" : txtphone.text! as String, "Menu" : txtaddress.text! as String ]
+        let user = ["id" : key, "Mon1" : txtfullname.text! as String, "Mon2" : txtphone.text! as String, "Mon3" : txtaddress.text! as String ]
         refinfo.child(key!).setValue(user)
-        
-        
-        
-        
     }
     
 

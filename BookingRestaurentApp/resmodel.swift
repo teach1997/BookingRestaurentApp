@@ -7,16 +7,21 @@ class resmodel
     var ResName: String?
     var ResMap: String?
     var Rate: String?
+    var id: String?
+    var hinh: String?
   //  let ref: DatabaseReference!
     
 //    init(text: String) {
 //        self.text = text
 //        ref = Database.database().reference().child("ResInformation").childByAutoId()
 //    }
-    init(ResName:String?, ResMap: String?, Rate: String?){
+    init(ResName:String?, ResMap: String?, Rate: String?, id: String?, hinh: String? ){
         self.ResName = ResName;
         self.ResMap = ResMap;
         self.Rate = Rate;
+        self.id = id;
+        self.hinh = hinh;
+     //   self.hinh = hinh;
     }
 //    init(snapshot: DataSnapshot)
 //    {
